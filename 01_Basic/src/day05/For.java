@@ -48,7 +48,7 @@ public class For {
 			s = s + 1D/i;
 		}
 		//保留两位小数输出
-		BigDecimal b = new BigDecimal(s);
+		BigDecimal b = new BigDecimal(Double.toString(s));
 		double s1 = b.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
 		System.out.println(s1);
 	}
