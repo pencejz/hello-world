@@ -27,8 +27,6 @@ public class Demo {
 			fk.pay();
 		}
 		
-		
-		
 	}//main
 	
 }
