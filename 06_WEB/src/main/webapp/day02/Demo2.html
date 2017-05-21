@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>样式</title>
+	<!-- 2.内部样式：在head的子标签style里写样式，这样写的样式可以被当前页面所复用 -->
+	<style>
+		h2{color:blue;}
+	</style>
+	<!-- 3.外部样式：在独立的css文件内写样式，需要通过link标签引入到html中才能生效
+				这样写的样式可以被多个html所复用
+		   -->
+	<link rel="stylesheet" href="x.css"/>
+</head>
+<body>
+	<!-- 1.内联样式：直接在元素的style属性里写样式，这样写的样式无法复用 -->
+	<h1 style="color:red;">CSS</h1>
+	<h2>CSS有三种用法</h2>
+	<p>1.内联样式</p>
+	<P>2.内部样式</P>
+	<p>3.外部样式</p>
+</body>
+</html>

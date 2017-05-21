@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery对象</title>
+<script src="../js/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+	//什么时候会通过jQuery对象获取DOM
+	function dy(){
+		var $ps = $("p");
+		console.log($ps);
+		for(var i=0;i<$ps.length;i++){
+			var p = $ps[i];
+			alert(p.innerHTML);
+		}
+	}
+	//什么时候将DOM转成jQuery对象，传入的参数是一个DOM对象
+	function change(img){
+		//将此DOM转成jQuery对象，因为jQuery对象修改宽高简单
+		var w = $(img).width();
+		if(w=="218"){
+			console.log(w);
+			$(img).width("250px").height("250px");
+			console.log($(img).width("250px"));
+		}else{
+			$(img).width("218px").height("218px");
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="打印" onclick="dy();"/>
+	<p>jQuery本质上是DOM数组</p>
+	<p>jQuery对象只能调用jQuery方法</p>
+	<p>jQuery对象只能调用DOM方法</p>
+	<div>
+		<img src="../images/01.jpg" onclick="change(this);"/>
+		<img src="../images/02.jpg" onclick="change(this);"/>
+		<img src="../images/03.jpg" onclick="change(this);"/>
+	</div>
+</body>
+</html>

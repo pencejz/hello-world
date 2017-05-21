@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery对事件的处理</title>
+<script src="../js/jquery-1.11.1.js"></script>
+<script>
+	//$(function(){})类似于
+	//window.onload=function(){}
+	//区别是：
+	//onload若写多次，则最后一次有效(覆盖)
+	//$(fun)若写多次，则都有效(叠加)
+	$(function(){
+		//alert(1);
+		//给按钮绑定事件
+		$(":button").click(function(e){
+			alert("AAA");
+			console.log(e);
+		});
+	});
+</script>
+</head>
+<body>
+	<p>jQuery处理事件和JS差不多</p>
+	<p><input type="button" value="AAA"/></p>
+</body>
+</html>
+
+
+
+
+

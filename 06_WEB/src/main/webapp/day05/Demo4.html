@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>猜数字</title>
+
+<script>
+	/*页面加载时生成随机数，此代码比body执行的还早
+	所以当用户看到页面内容时，随机数已经生成，当点击“猜”时，就可以在guess()内调用这个随机数了*/
+	var num = parseInt(Math.random()*101); //随机生成0-100的整数
+	console.log(num);
+	
+	function guess() {
+		//获取随机数
+		var n = document.getElementById("num").value;
+		console.log(n);
+		//获取span
+		var span = document.getElementById("result");
+		if(isNaN(n)){
+			span.innerHTML = "请输入数字";
+		}else if(n==num){
+			span.innerHTML = "恭喜你，猜对了！";
+		}else if(n<num){
+			span.innerHTML = "你猜小咯！";
+		}else{
+			span.innerHTML = "你猜大咯！";
+		}
+	}
+	
+</script>
+<style>
+	span {
+		border:2px solid red;
+	}
+</style>
+</head>
+<body>
+	<input type="text" id="num"/>
+	<input type="button" value="猜" onclick="guess()"/>
+	<span id="result"></span>
+</body>
+</html>

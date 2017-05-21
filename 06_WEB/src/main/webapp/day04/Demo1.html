@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>浮动</title>
+<style>
+	#d0 {
+		width:400px;
+		border:1px solid red;
+	}
+	p {
+		width:400px;
+		border:1px solid red;
+	}
+	#d0 div {
+		width:100px;
+		height:100px;
+		margin:10px;
+	}
+	#d1 {
+		background-color:red;
+	}
+	#d2 {
+		background-color:green;
+	}
+	#d3 {
+		background-color:blue;
+	}
+	/*右浮动：元素倒序排列 */
+	/*#d1,#d2,#d3 {float:right;}*/
+	/*左浮动：元素正序排列
+		当d1向左浮动时，它脱离流定位并且向左移动，*/
+	#d1,#d2,#d3 {float:left;}
+	/*消除浮动影响 */
+	/*1.消除对p的影响 */
+	/*p {clear:left}*/
+	/*2.消除对父元素d0的影响：父元素保留边框
+		做法是在父元素内加上一个空的块，并在块上加上clear，原理是使用空块拉伸父元素高度 */
+	#d0 #d4 {
+		height:0;
+		clear:left;
+	}
+</style>
+</head>
+<body>
+	<div id="d0">
+		<div id="d1"></div>
+		<div id="d2"></div>
+		<div id="d3"></div>
+		<div id="d4"></div>
+	</div>
+	<p>浮动的元素海拔更高</p>
+</body>
+</html>

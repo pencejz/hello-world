@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS内置对象</title>
+<script>
+	//1.String:几乎和java一样
+	//2.Boolean:没有重要API
+	//3.Math:几乎和java一样
+	console.log(Math.PI); //常量
+	console.log(Math.round(Math.PI)); //四舍五入取整
+	//4.Number 数字对象
+	console.log(Math.PI.toFixed(3)); //保留3位小数
+	//5.Array(都是object类型数组) 数组对象
+	//数组的创建方式有两种：
+	//(1)如果知道现在要存什么数据
+	var a1 = ["zhangsan", 25, true]; //保存了3个不同类型的元素
+	console.log(a1[0]);
+	//(2)如果不知道要存什么数据
+	var a2 = new Array();
+	a2.push("lisi");
+	a2.push(30);
+	a2.push(false);
+	console.log(a2[1]);
+	//数组倒转：将数组内的值顺序颠倒
+	var a3 = [5, 8, 12, 3, 1, 6];
+	//直接修改原数组
+	a3.reverse(); 
+	console.log(a3);
+	//数组排序：默认按照String由小到大排序
+	a3.sort(); //按照字符串排序
+	console.log(a3);
+	//可以给函数添加参数来改变排序规则
+	a3.sort(function(a,b){return a-b}); //此处参数为匿名方法对象
+	//a3.sort(x); //在外面已经定义了x方法，此处直接调用x方法对象
+	console.log(a3);
+	//6.Date 时间对象
+	//创建时间
+	var d1 = new Date(); //创建当前时间
+	console.log(d1);
+	var d2 = new Date("2016/07/01 12:12:12"); //创建指定时间
+	console.log(d2);
+	//转换为本地格式
+	console.log(d1.toLocaleDateString()); //年月日
+	console.log(d1.toLocaleTimeString()); //时分秒
+	//读写时间分量
+	d2.setFullYear(2015);
+	console.log(d2.getFullYear());
+	console.log(d2.getMonth()+1); //月份从0开始
+	console.log(d2.getDate()); //几号
+	console.log(d2.getDay()); //周几
+	//7.RegExp 正则对象
+	var str = "no zuo no die,no can no bb.";
+	var reg = /no/;
+	//正则对象有2个方法：
+	//(1)reg.test(str) 判断str中是否包含和reg匹配的字符串
+	console.log("reg.test:"+reg.test(str));
+	//(2)reg.exec(str) 非全局模式：从str中查找和reg匹配的首个字串
+	console.log(reg.exec(str));
+	//                 全局模式：第N次调用则从str中查找和reg匹配的第N个字串
+	reg = /no/g;
+	console.log("reg.exec:"+reg.exec(str)); //第一个no
+	console.log(reg.exec(str)); //第二个no
+	console.log(reg.exec(str)); //第三个no
+	console.log(reg.exec(str)); //第四个no
+	console.log(reg.exec(str)); //null
+	console.log(reg.exec(str)); //第一个no
+	//String对象有3个方法支持正则对象：
+	//(1)str.replace(reg,"目标") 将str中和reg匹配的字串替换成目标
+	console.log("不使用正则："+str.replace("no", "bu")); //不使用正则，只会替换第一个
+	console.log(" 使用正则："+str.replace(reg, "bu")); //使用正则，全部替换
+	//(2)str.match(reg) 从str中找出和reg匹配的字串，以数组形式返回所有符合的字串
+	console.log(str.match(reg));
+	//(3)str.serch(reg) 从str中找出首个和reg匹配的字串的索引,即返回其下标
+	console.log(str.search(reg));
+	//8.function sum() 求和
+	function sum(){
+		if(arguments.length==0){
+			return 0;
+		}
+		var s=0;
+		for(var i=0;i<arguments.length;i++){
+			s+=arguments[i];
+		}
+		return s;
+	} 
+</script>
+</head>
+<body>
+	<input type="button" value="按钮1" onclick="alert(sum(1,2,3));" />
+	<input type="button" value="按钮2" onclick="alert(sum(4,5,6,7));" />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

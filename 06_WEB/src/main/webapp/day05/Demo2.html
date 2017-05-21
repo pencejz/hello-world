@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS基本语法</title>
+<script>
+	/*写在函数内的JS是在事件触发时被调用的
+	直接写JS在页面加载时，浏览器自动调用
+	由于JS是解释性语言，浏览器是从上往下依次加载，所以此处的JS调用时机比body早*/
+	//alert(1);
+	
+	console.log("JS的控制台打印");
+	
+	/*1.变量声明
+	JS变量不区分类型
+	JS变量默认值为dudefined*/
+	var x;
+	console.log(x);
+	x = 1;
+	console.log(x);
+	var y = 2;
+	console.log(y);
+	/*2.隐式转换*/
+	var s = "abc";
+	var n = 3.14;
+	var b = true;
+	//任何值和String相加结果为String
+	console.log(s+n);
+	console.log(s+b);
+	//boolean值参与运算转换为数字(true=1,false=0)
+	console.log(n+b);
+	console.log(b+b);
+	/*3.强制转换*/
+	console.log(n.toString()+1);
+	console.log(parseInt("2.6")+1);
+	console.log(parseFloat("2.6")+1);
+	console.log(parseInt("abc"));
+	
+	console.log(typeof(b));
+	//判断传入的参数是否是NaN(is not a number非数字)
+	console.log(isNaN("123")); //false
+	console.log(isNaN("abcs")); //true
+	/*4.运算符*/
+	console.log(5/2);
+	c = 123;
+	d = "123";
+	console.log(c===d);	//全等(值，类型 都相等)
+	console.log(c==d); //不全等(值，类型 任一相等)
+	/*5.条件表达式*/
+	//JS中一切值都可以当做条件，哪怕不是布尔值，若使用其他值(非布尔值)作条件的话，其中空值等价于false，非空值等价于true
+	//空值:0 / null / "" / undefined / NaN
+	var k = 6;
+	if(k){
+		console.log("K不为空");
+	}else{
+		console.log("K为空");
+	}
+	k && console.log("ok");
+	
+</script>
+</head>
+<body>
+	<p>也可以在页面加载时直接调用JS</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

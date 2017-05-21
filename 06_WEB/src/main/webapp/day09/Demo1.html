@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>自定义对象</title>
+<script>
+	//1.使用直接量创建对象
+	function f1(){
+		var student = {"name":"zhangsan","age":23,"job":function(){alert("我学java")}};
+		//使用对象
+		alert(student.name);
+		alert(student.age);
+		student.job();
+	}
+	//2.1采用内置构造器创建对象
+	function f2(){
+		//创建对象
+		var teacher = new Object();
+		teacher.name = "苍老师";
+		teacher.age = 20;
+		teacher.job = function(){alert("我教java");}
+		//使用对象
+		alert(teacher.name);
+		alert(teacher.age);
+		teacher.job();
+	}
+	//2.2 采用自定义构造器创建对象
+	//先定义对象
+	function Coder(name,age,job){
+		//记录传入的数据
+		//this就是创建出来的对象，this.name给此对象增加name属性
+		//=name就是将name参数赋值给此属性
+		this.name = name;
+		this.gae = age;
+		this.job = job;
+	}
+	//
+	function f3(){
+		//创建对象
+		var coder = new Coder("lisi",26,function(){alert("我写java");});
+		//使用对象
+		alert(coder.name);
+		alert(coder.age);
+		coder.job();
+	}
+</script>	
+</head>
+<body>
+	<input type="button" value="按钮1" onclick="f1();"/>
+	<input type="button" value="按钮2" onclick="f2();"/>
+	<input type="button" value="按钮3" onclick="f3();"/>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

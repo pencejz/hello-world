@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>一堆照片</title>
+<style>
+	div {
+		border:1px solid red;
+		background-color: #088;
+		width:800px;
+		height:500px;
+		margin:50px auto;
+		position:relative;
+	}
+	#i1 {
+		position:absolute;
+		left:150px;
+		top:100px;
+	}
+	#i2 {
+		position:absolute;
+		left:100px;
+		top:30px;
+	}
+	#i3 {
+		position:absolute;
+		left:300px;
+		top:120px;
+	}
+	/*鼠标悬停在图片上方时，图片完整显示 ，即就是讲图片的堆叠顺序调整为最大 */
+	img:hover {
+		z-index: 999;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<img src="../images/1.jpg" id="i1"/>
+		<img src="../images/2.jpg" id="i2"/>
+		<img src="../images/3.jpg" id="i3"/>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

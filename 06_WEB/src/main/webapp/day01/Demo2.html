@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>文本处理</title>
+</head>
+<body>
+	<!-- 1.标题 -->
+	<h1>苍老师</h1>
+	<!-- 2.段落 -->
+	<p>Hello,HTML</p>
+	<p>Hello,苍老师</p>
+	<h2>范传奇</h2>
+	<p>范传奇暗恋王克晶</p>
+	<!-- 7.2.2 增加超链接，并连接到锚里 -->
+	<p><a href="#libai">苍老师</a>吃醋</p>
+	<h3>王克晶</h3>
+	<!-- 3.1有序列表 -->
+	<ol>
+		<li>河北省</li>
+		<li>山东省</li>
+		<li>四川省</li>               
+	</ol>
+	<!-- 3.2无序列表 -->
+	<ul>
+		<li>石家庄</li>
+		<li>济南</li>
+		<li>成都</li>
+	</ul>
+	<!-- 3.3列表嵌套 -->
+	<ol>
+		<li>
+			四川省
+			<ul>
+				<li>成都</li>
+				<li>绵阳</li>
+			</ul> 
+		</li>  
+		<li>
+			山东省
+			<ul>
+				<li>济南</li>
+				<li>青岛</li>                    
+			</ul> 
+		</li>             
+	</ol>
+	<!-- 4.行内元素 -->
+	<p>
+		<i>北京市</i>海淀区<b>北三环</b><del>西路甲18号</del><span style="color:blue;"><u>中鼎大厦</u></span>B座8层
+	</p>
+	<!-- 5.空格折叠 换行 -->
+	<p>
+		那是一个&nbsp;&nbsp;&nbsp;秋天，<br>
+		看着传奇&nbsp;&nbsp;&nbsp;跑偏。<br>
+		奔着克晶&nbsp;&nbsp;&nbsp;而去，<br>
+		误入老苍&nbsp;&nbsp;&nbsp;心间。 <br>
+	</p>
+	<!-- 6.图片 -->
+	<!-- 6.1 绝地路径
+		从盘符开始写出图片的完整目录和名称
+		例子：D:/day01/images/1.jpg
+		例子: /hone/soft01/day01/1.jpg
+		 当开发完成，并上线时，网页交给客户使用，若他改变图片的目录，就会导致报错 -->
+	<!-- 6.2 相对路径 
+		写出图片相对于HTML的路径而不必写出它存储的完整目录
+		a.将图片和网页放在同一目录下     1.jpg
+		b.将图片放在网页的下级目录内      a/1.jpg
+		c.将图片放在网页的上级目录内      ../1.jpg -->
+	<p>
+		<!-- 图片与页面平级 -->
+		<img src="01.jpg">
+		<!-- 图片在页面下级 -->
+		<img src="a/02.jpg">
+		<!-- 图片在页面上级 -->
+		<img src="../03.jpg">
+		<!-- 图片的绝对路径 -->
+		<img src="C:\Users\sss\Desktop\doc\images\01.jpg"> 
+	</p>
+	<!-- 7.超链接 -->
+	<!-- 7.1超链接普通用法 -->
+	<p>
+		<a href="http://www.tmooc.cn" target="_black">达内</a>
+		<a href="http://www.tmooc.cn" target="_black"><img src="01.jpg"></a>
+	</p>
+	<!-- 7.2.1 超链接特殊用法：锚
+		连接到本页面指定的位置(锚点) -->
+	<p><a name="libai">窗前明月光</a>，疑是地上霜。</p>
+	<!-- 页面的顶部默认是一个锚点，直接使用#号表示 -->
+	<p><a href="#">回到顶部</a></p>           
+	<!-- 8.1 表格语法 -->
+	<table border="1px" cellspacing="0" width="30%">
+		<tr>
+			<td>苍老师</td>
+			<td>范传奇</td>
+		</tr>
+		<tr>
+			<td>王克晶</td>
+			<td>程祖红</td>
+		</tr>
+	</table>
+	<!-- 8.2 跨行rowspan -->
+	<table border="1px" cellspacing="0" width="30%">
+		<tr>
+			<td rowspan="2">苍老师</td>
+			<td>范传奇</td>
+		</tr>
+		<tr>
+			<!-- <td>王克晶</td> -->
+			<td>程祖红</td>
+		</tr>
+	</table>
+	<!-- 8.3 跨列colspan -->
+	<table border="1px" cellspacing="0" width="30%">
+		<tr>
+			<td colspan="2">苍老师</td>
+			<!-- <td>范传奇</td> -->
+		</tr>
+		<tr>
+			<td>王克晶</td>
+			<td>程祖红</td>
+		</tr>
+	</table>
+	<!-- 8.4 行分组	对行进行分区，为了便于设置样式 -->
+	<table border="1px" width="30%" cellspacing="0">
+		<thead>
+			<tr>
+				<td>编号</td>
+				<td>名称</td>
+				<td>金额</td>
+			</tr>
+		</thead>
+		<tbody style="color:red;">
+			<tr>
+				<td>001</td>
+				<td>鼠标</td>
+				<td>50</td>
+			</tr>
+			<tr>
+				<td>002</td>
+				<td>键盘</td>
+				<td>100</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="2">合计</td>
+				<td>150</td>
+				</tr>
+		</tfoot>
+	</table>    
+</body>
+</html> 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>计算阶乘</title>
+<script>
+	function jc() {
+		var n = document.getElementById("num").value;
+		var span = document.getElementById("result");
+		/*从页面中获取的值都是String类型，所以输入0时得到的是“0” */
+		n = parseInt(n);
+		if(n){
+			//n非空，继续判断是否为数字
+			if(isNaN(n)){
+				//不是数字，提示
+				span.innerHTML = "请输入数字!";
+			}else if(n<0){
+				//负数没有阶乘
+				span.innerHTML = "负数没有阶乘!";
+			}else{
+				//n>0,计算阶乘写入span
+				var s=1;
+				//for(var i=n;i>0;i--){可简写成下句
+				for(var i=n;i;i--){
+					s =*i;
+				}
+				span.innerHTML = s;
+			}
+		}else {
+			if(n==0){
+				//0的阶乘是1
+				span.innerHTML = 1;
+			}else{
+				//n为空，提示
+				span.innerHTML = "不能为空!";
+			}
+			
+		}
+		
+	}
+</script>
+</head>
+<body>
+	<P>n!=1*2*3...*n</P>
+	<p>0!=1,负数没有阶乘</p>
+	<p>
+		<input type="text" id="num"/>
+		<input type="button" value="阶乘" onclick="jc();" />
+		= <span id="result"></span>
+	</p>
+</body>
+</html>

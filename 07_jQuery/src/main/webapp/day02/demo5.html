@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>动画</title>
+<style>
+	img {
+		/*动画基于定位*/
+		position: relative;
+	}
+	#cc {
+		width: 200px;
+		height: 100px;
+		border: 1px solid red;
+		position: fixed;
+		top: 300px;
+		right: -180px;
+	}
+</style>
+<script src="../js/jquery-1.11.1.js"></script>
+<script>
+	//回调函数：在某事完成后自动调用的函数。
+	function f1() {
+		$("img").show(3000,function(){
+			alert(1);
+		});
+	}
+	function f2() {
+		$("img").hide(3000,function(){
+			alert(2);
+		});
+	}
+	function f3() {
+		//动画提示：先显示再自动隐藏
+		$("div").fadeIn(500).fadeOut(3000);
+	}
+	function f4() {
+		$("img").animate({"left":"300px"},3000)
+				  .animate({"top":"300px"},3000)
+				  .animate({"left":"0"},3000)
+				  .animate({"top":"0"},3000);
+	}
+	$(function(){
+		$("#cc").hover(
+			function(){
+				$(this).animate({"right":"0"},500);
+			},
+			function(){
+				$(this).animate({"right":"-180px"},500);
+			}
+		);
+	});
+</script>
+</head>
+<body>
+	<p>
+		<input type="button" value="显示"
+			onclick="f1();"/>
+		<input type="button" value="隐藏"
+			onclick="f2();"/>
+		<input type="button" value="点赞"
+			onclick="f3();"/>
+		<input type="button" value="走你"
+			onclick="f4();"/>
+	</p>
+	<p>
+		<img src="../images/01.jpg"/>
+	</p>
+	<div style="display:none;">操作成功</div>
+	<div id="cc"></div>
+</body>
+</html>
+
+
+
+
+

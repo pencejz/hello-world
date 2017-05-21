@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登录</title>
+<style>
+	.ok {
+		color:green;
+		border:1px solid green;
+	}
+	.error {
+		color:red;
+		border:1px solid red;
+	}
+</style>
+<script>
+	//校验账号格式的方法(在鼠标焦点切换的那一刻调用)
+	function checkCode() {
+		var code = document.getElementById("code").value; //获取账号
+		var span = document.getElementById("codemsg"); //获取span
+		//检查账号格式
+		var reg = /^\w{5,10}$/; //定义正则表达式
+		if(reg.test(code)){
+			//匹配成功，给span加上ok样式
+			span.className = "ok";
+			//修改span内容
+			span.innerHTML = "匹配成功！";
+			return true;
+		}else {
+			//匹配失败，给span加上error样式
+			span.className = "error";
+			span.innerHTML = "格式错误！";
+			return false;
+		}
+	}
+	//密码同上
+	function checkPwd() {
+		var pwd = document.getElementById("pwd").value;
+		var span = document.getElementById("pwdmsg");
+		var reg = /^\w{5,10}$/;
+		if(reg.test(pwd)){
+			span.className = "ok";
+			span.innerHTML = "匹配成功！";
+			return true;
+		}else{
+			span.className = "error";
+			span.innerHTML = "格式错误！";
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+	<!-- 事件内，当返回false时才会取消改事件，只能是false才行 -->
+	<form action="http://www.tmooc.cn" onsubmit="return checkCode() && checkPwd()==2;">
+		<p>
+			账号:
+			<input type="text" onblur="checkCode();" id="code"/>
+			<span id="codemsg">5-10位字母、数字、下划线</span>
+		</p>
+		<p>
+			密码:
+			<input type="password" onblur="checkpwd();" id="pwd" />
+			<span id="pwdmsg">5-10位字母、数字、下划线</span>
+		</p>
+		<p><input type="submit" value="登录" /></p>
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+

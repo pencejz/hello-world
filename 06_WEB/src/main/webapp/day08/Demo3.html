@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>联动菜单</title>
+<script>
+	//页面加载后
+	var cities;
+	window.onload = function(){
+		//查询每个省份的城市
+		cities = [
+				["石家庄","保定","唐山"],
+				["沈阳","鞍山","铁岭"],
+				["杭州","宁波","绍兴"]
+			];
+	}
+	function chg(){
+		/*省份下拉选中值发生变化时，调用本函数*/
+		//获取省份
+		var s1 = document.getElementById("province");
+		var index = s1.value;
+		//根据索引获取对应的城市
+		var pcities = cities[index];
+		console.log(pcities);
+		//删除旧的城市
+		var s2 = document.getElementById("city");
+/*		var options = s2.getElementsByTagName("option");
+		for(var i=options.length-1;1>0;i--){
+			s2.removeChild(options[i]);
+		}*/
+		s2.innerHTML = "<option>请选择</option>";
+		//增加新的城市
+		if(pcities){
+			for(var i=0;i<pcities.length;i++){
+				var option = document.createElement("option");
+				option.innerHTML = pcities[i];
+				s2.appendChild(option);
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	省:
+	<select onchange="chg();" id="province">
+		<option value="-1">请选择</option>
+		<option value="0">河北省</option>
+		<option value="1">辽宁省</option>
+		<option value="2">浙江省</option>
+	</select>
+	市:
+	<select id="city">
+		<option>请选择</option>
+	</select>
+</body>
+</html>

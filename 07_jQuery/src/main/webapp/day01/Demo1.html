@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery使用步骤</title>
+<!-- 创建js文件夹，导入jQuary文件 -->
+<!-- jQuery必须在自定义的JS之前引入，因为自定义的JS要使用它 -->
+<script src="../js/jquery-1.11.1.js"></script>
+<script>
+	function bigger(){
+		//默认获得当前p的字号(16px)
+		var size = $("p").css("font-size");
+		//去掉px
+		size = size.replace("px","");
+		//将size+10，再设置给段落
+		$("p").css("font-size",10+parseInt(size)+"px");
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="+" onclick="bigger();"/>
+	<p>jQuery是轻量级的JS框架</p>
+	<p>jQuery对动画提供了支持</p>
+	<p>jQuery对Ajax提供了支持</p>
+	<p>jQuery极大地简化了JS编程</p>
+</body>
+</html>

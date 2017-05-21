@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS特性</title>
+	<style type="text/css">
+		/*1.继承性：父元素的样式可以被子元素继承，一般只有字体，颜色可以继承  */
+		body {
+			font-family:"微软雅黑","文泉驿正黑","黑体";
+		}
+		/*2.层叠性：给同一个元素增加多种不同的声明，其效果会叠加到一起
+				  可以多个属性写在一个h1{}中，也可以添加多个h1{}*/
+		h1 {
+			font-size:50px;
+			color:red;
+		}
+		/*3.优先级：给同一个元素设置相同的声明，效果是以后者为准，即后者效果会覆盖前者，这种效果也叫就近原则*/
+		h1 {color:blue;}
+	</style>
+</head>
+<body>
+	<h1>苍老师</h1>
+	<h2>范传奇</h2>
+</body>
+</html>

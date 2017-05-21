@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>边框</title>
+<style>
+	/*1.单边设置边框（left,right,top,bottom）*/
+	h1 {/*          粗细        类型          颜色 */
+		border-left:10px solid blue;
+	}
+	/*2.四边设置边框*/
+	p {border:1px dashed red;}
+	/*默认情况下元素的高度会自适应，因此是不会让内容溢出的，当固定其高度时就有可能导致内容溢出，溢出overflow时的处理：
+		visible：显示溢出（默认值）
+		hidden：隐藏溢出
+		scroll：不管是否溢出，均添加滚动条
+		auto：有溢出时，添加滚动条 */
+	p {
+		width:300px;
+		height:50px;
+		overflow:auto;
+	}
+</style>
+</head>
+<body>
+	<h1>苍老师</h1>
+	<p>
+		刘苍松，达内java教学总监。
+		战争学院是英雄联盟裁决瓦洛兰政治纠纷之地。这里是绝对中立的领土，严禁任何纷争。 违反者将面对学院的士兵和魔法。
+		学院坐落于一座巨型水晶枢纽之上，由黑曜石、 贵金属和魔法塑形而成。它位于莫格罗恩关隘的北方入口，刚好位于相互敌对的城邦德玛西亚和诺克萨斯之间。
+	</p>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>列表样式</title>
+<style>
+	ol {
+		/*将阿拉伯数字改为罗马数字*/
+		list-style-type: upper-roman;
+	}
+	ul {
+		/*将小圆点改为小方块 */
+		list-style-type: square;
+	}
+	#sjz {
+		list-style-image: url(../images/modify.png);
+	}
+</style>
+</head>
+<body>
+	<ol>
+		<li>河南</li>
+		<li>河北</li>
+		<li>山东</li>
+		<li>山西</li>
+	</ol>
+	<ul>
+		<li>丹东</li>
+		<li>葫芦岛</li>
+		<li id="sjz">石家庄</li>
+		<li>哈尔滨</li>
+	</ul>
+</body>
+</html>

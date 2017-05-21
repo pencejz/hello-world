@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>查询节点</title>
+<script>
+	window.onload = function(){
+		//1.根据标签名查询节点
+		//1.1 在整个文档内查询
+		var lis = document.getElementsByTagName("li");
+		console.log(lis);
+		//1.2 在某个节点内查询
+		var ul = document.getElementById("city");
+		var lis = ul.getElementsByTagName("li");
+		console.log(lis);
+		//2.根据层次查询节点
+		//2.1 查询某节点的父亲
+		var sh = document.getElementById("sh");
+		console.log(sh.parentNode);
+		//2.2 查询某节点的孩子
+		//带空格，一般不用
+		console.log("带空格："+ul.childNodes);
+		//不带空格，常用
+		lis = ul.getElementsByTagName("li");
+		console.log("不带空格："+lis);
+		//2.3 查询某节点的兄弟，标准API中没有直接点查询兄弟的方法
+		//间接查询：节点.父亲.孩子[n] n表示第n个兄弟
+		var li = sh.parentNode.getElementsByTagName("li")[0];
+		console.log(li);
+		//3.根据name查询节点，适用于单选或者多选
+		var radios = document.getElementsByName("sex");
+		console.log(radios);
+		
+	}
+</script>
+</head>
+<body>
+	<ol>
+		<li>河北省</li>
+		<li>江苏省</li>
+		<li>山东省</li>
+	</ol>
+	<ul id="city">
+		<li>北京</li>
+		<li id="sh">上海</li>
+		<li>成都</li>
+	</ul>
+	<p>
+		<input type="radio" name="sex"/>男
+		<input type="radio" name="sex"/>女
+	</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

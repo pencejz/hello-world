@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>照片墙</title>
+<style>
+	body {
+		background-color:#000;
+	}
+	p {
+		color:#000;
+		text-align:center;
+	}
+	/*设置表尺寸 */
+	ul {
+		width:780px;
+		margin:20px auto;
+		/*去掉列表前的符号 */
+		list-style-type:none;
+	}
+	li {
+		border:1px solid #CCC;
+		padding:10px;
+		margin:10px;
+		width:218px;
+		float:left;
+		background-color:#fff;
+	}
+	/*鼠标悬停在li上时，使其抖动一下，使用相对定位设置位置大小的偏移来实现 */
+	li:hover {
+	position:relative;
+	left:2px;
+	top:-2px;
+}
+	
+</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<img src="../images/01.jpg"/>
+			<p>静夜思</p>
+		</li>
+		<li>
+			<img src="../images/02.jpg"/>
+			<p>李白</p>
+		</li>
+		<li>
+			<img src="../images/03.jpg"/>
+			<p>床前明月光</p>
+		</li>
+		<li>
+			<img src="../images/04.jpg"/>
+			<p>疑是地上霜</p>
+		</li>
+		<li>
+			<img src="../images/05.jpg"/>
+			<p>举头望明月</p>
+		</li>
+		<li>
+			<img src="../images/06.jpg"/>
+			<p>低头思故乡</p>
+		</li>
+	</ul>
+</body>
+</html>

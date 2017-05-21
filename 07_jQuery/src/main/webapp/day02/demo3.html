@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>合成事件</title>
+<script src="../js/jquery-1.11.1.js"></script>
+<script>
+	$(function(){
+		//给所有图片绑定hover事件
+		$("img").hover(
+			function(){
+				console.log(1);
+				$(this).width("250px").height("250px");
+				//$(this).css("width","250px").css("height","250px")
+				//$(this).addClass("big")
+			},//悬停时
+			function(){
+				console.log(2);
+				$(this).width("218px").height("218px");
+				//$(this).css("width","218px").css("height","218px")
+				//$(this).removeClass("big")
+			} //离开时
+		);
+		//给按钮绑定单击事件
+		$(":button").click(function(){
+			//选择所有图片，让他们在显示与
+			//隐藏之间切换。
+			$("img").toggle();
+		});
+		//模拟操作：自动触发某事件
+		$(":button").trigger("click");
+	});
+</script>
+</head>
+<body>
+	<p><input type="button" value="切换"/></p>
+	<p>
+		<img src="../images/01.jpg"/>
+		<img src="../images/02.jpg"/>
+		<img src="../images/03.jpg"/>
+	</p>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS的使用方式</title>
+<!-- 2.嵌入式 -->
+<script>
+	//注释方式一     /*注释方式2*/
+	//JS函数特点：1.都是共有的，不用声明 
+	//         2.有返回值，但不用声明类型 
+	function f2() {alert('疑是地上霜');	}		
+</script>
+<!-- 3.文件调用式
+	此标签不能既引用JS，又写JS
+	此标签必须写成双标签 -->
+<script src="x.js"></script>
+</head>
+<body>
+	<!-- 事件：JS被调用的时机
+		举例：鼠标单击事件、双击事件 -->
+	<!-- 1.事件定义式：在元素上定义事件时直接写JS onclick-单击 -->
+	<input type="button" value="按钮1" onclick="alert('窗前明月光 ');" />
+	<!-- 2.嵌入式：在script标签里写JS，该标签可以放在head中，也可以放在body中 -->
+	<input type="button" value="按钮2" onclick="f2()" />
+	<!-- 3.文件调用式：在js文件中写JS并引入到页面上使用 -->
+	<input type="button" value="按钮3" onclick="f3()" />
+</body>
+</html>

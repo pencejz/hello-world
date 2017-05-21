@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>事件冒泡</title>
+<style>
+	#d1 {
+		border:1px solid red;
+		padding:30px;
+		width:200px;
+	}
+	#d2 {
+		border:1px solid red;
+		padding:30px;
+		width:500px;
+		margin-top:30px;
+	}
+	#d1 p {
+		border:1px solid red;
+		padding:30px;
+	}
+</style>
+<script>
+	function f1(e){
+		//取消冒泡
+		if(e.stopPropagation){
+			e.stopPropagation();
+		}else{
+			e.cancelBubble = true;
+		}
+	}
+	
+	function f2(e){
+		//获取事件源
+		var obj = e.srcElement || e.target;
+		console.log(obj);
+	}
+</script>
+</head>
+<body>
+	<div id="d1" onclick="alert('div');">div
+		<p onclick="alert('p');">p
+			<input type="button" value="AAA" onclick="alert('button');"/>
+			<input type="button" value="BBB" onclick="f1(event);"/>
+		</p>
+	</div>
+	<div id="d2" onclick="f2(event);">
+		<input type="button" value="BBB"/>
+		<a href="#">TOP</a>
+		<p>黄河之水天上来</p>
+	</div>
+</body>
+</html>

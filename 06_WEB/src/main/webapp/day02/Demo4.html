@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>选择器</title>
+<title>选择器1</title>
+<style>
+	/*1.类型选择器：根据属性选择一组具有共同类型的元素*/
+	.girl {color:pink;}
+	/*2.id选择器：根据id属性选择唯一元素*/
+	#p4 {color:red;}
+	/*3.选择器组:写出一组选择器，并选中每个选择器所对应的目标的并集*/
+	.girl,#p4 {font-weight:bold;}
+	/*4.派生选择器：选择某一元素的后代*/
+	/*4.1 选择某元素满足条件的儿子*/
+	#p5>b {font-size:30px;}
+	/*4.2 选择某元素满足条件的子孙*/
+	#p5 b {color:red;}
+	/*5.伪类选择器：根据状态选择元素*/
+	/*5.1 选择未访问过的超链接*/
+	a:link {color:red;}
+	/*5.2 选择已访问过的超链接*/
+	a:visited {color:yellow;}
+	/*5.3 选择激活态（正在点击）的元素*/
+	#b1:active {background-color:blue;}
+	/*5.4 选择有焦点（光标闪烁的）的元素*/
+	#t1:focus {background-color:green;}
+	/*5.5 选择鼠标悬停的元素*/
+	img:hover {
+		width:250px;
+		height:250px;
+	}
+</style>
+</head>
+<body>
+	<p class="girl">苍老师啊苍老师</p>
+	<p>翠花上酸菜</p>
+	<p class="girl">你好你好你好</p>
+	<p id="p4">么么哒么么哒</p>
+	<p id="p5">北京市<u>海淀区<b>北三环</b>西路</u>甲18号<b>中鼎</b>大厦B8</p>
+	<p>
+		<a href="http://www.tmooc.cn">达内</a>
+		<a href="http://www.tmoocq.cn">随便</a>
+	</p>
+	<p>
+		<input type="button" value="JSD1605" id="b1"/>
+		<input type="text" id="t1"/>
+	</p>
+	<p>
+		<img src="../03.jpg"/>
+	</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

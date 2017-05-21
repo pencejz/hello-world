@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>背景</title>
+<style>
+	/*设置背景图片 */
+	body {
+		background-image:url(../images/background.png);
+		background-repeat:repeat-y;
+		background-position:center;
+	}
+	/*设置背景图片有简化的写法：background:背景色 背景图 平铺 位置
+		上述参数可以酌情省略，但至少要包含背景色或背景图片中的一个 */
+	.enemy {
+		background:url(../images/airplane.png) no-repeat center;
+	}
+	.hero {
+		background:url(../images/hero0.png) no-repeat center;
+	}
+	/*设置背景固定 */
+	body {
+		background-attachment:fixed;
+	}
+	.enemy {
+		width:50px;
+		height:50px;
+	}
+	.hero {
+		width:125px;
+		height:125px;
+	}
+	div {
+		border:1px solid red;
+		margin:10px auto;
+	}
+
+</style>
+</head>
+<body>
+	<!-- 敌机 -->
+	<div class="enemy"></div>
+	<div class="enemy"></div>
+	<div class="enemy"></div>
+	<div class="enemy"></div>
+	<div class="enemy"></div>
+	<div class="enemy"></div>
+	<div class="enemy"></div>
+	<div class="enemy"></div>
+	<div class="enemy"></div>
+	<div class="enemy"></div>
+	<!-- 英雄机 -->
+	<div class="hero"></div>
+	<div class="hero"></div>
+</body>
+</html>

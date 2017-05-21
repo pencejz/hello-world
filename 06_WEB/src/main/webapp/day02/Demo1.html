@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表单</title>
+</head>
+<body>
+	<!-- 1.表单元素：
+			action：声明表单提交的目标
+			method：表单数据的提交方式
+			enctype：表单数据的编码格式 -->
+	<form action="http://www.tmooc.cn">
+		<!-- 2.表单控件 -->
+		<!-- 2.1 input元素：通过type属性区分 -->
+		<!-- input属性1：         文本框           默认值                               最大长度                           只读 -->
+		<p>账号：<input type="text" value="请输入账号" maxlength="10" readonly/></p>
+		<!--input属性2                 密码框，属性同上 -->
+		<p>密码<input type="password"/></p>
+		<!--input属性3:单选框
+				name：设置分组，同一组内元素互斥
+				checked：设置默认选项
+				value：用来向服务器提交属性 -->
+		<p>
+			性别：
+			<!--        单选              分组(同组互斥) 默认选择 -->
+			<input type="radio" name="sex" checked/>男
+			<input type="radio" name="sex"/>女
+		</p>
+		<!-- input属性4:多选框
+				checked，设置默认选项
+				name,value:与服务器相关 -->
+		<p>
+			兴趣：
+			<input type="checkbox"/>听音乐
+			<input type="checkbox"/>打游戏
+			<input type="checkbox"/>看小说
+		</p>
+		<!-- input属性5：文件框 -->
+		<p>头像：<input type="file"/></p>
+		<!-- input属性6：隐藏框
+				用来向服务器传递秘密的数据，该数据是程序员写入的，不需要用户输入 -->
+		<p><input type="hidden" value="123"/></p>
+		<!-- 按钮：提交submit，重置reset，普通button
+				三种按钮通过type区分，即type只能表示按钮的功能，而按钮的名称通过value设置 -->
+		<p>
+			<input type="submit" value="注册"/>
+			<input type="reset" value="重置"/>
+			<input type="button" value="删除"/>
+		</p>
+		<!-- 2.2 其他元素 -->
+		<!-- lable：管理表单内的文本，可以将文本与框绑定在一起，从而增加框的有效点击面积
+				id：任何元素都有id，是元素的唯一标识 -->
+		<p>
+			<label for="c1">我已阅读并自愿遵守此协议！</label>
+			<input type="checkbox" id="c1"/>
+		</p>
+		<!-- 下拉选select-option
+				selected设置默认选中
+				value -->
+		<p>
+			家乡：
+			<select>
+				<option>请选择</option>
+				<option selected>成都</option>
+				<option>眉山</option>
+				<option>绵阳</option>
+			</select>
+		</p>
+		<!-- 文本域textarea
+			rows,cols设置默认大小
+			在“上海自来来自海上”位置处添加的文本为默认值 -->
+		<p>
+			简介：<textarea rows="" cols="">上海自来来自海上</textarea>
+		</p>
+		
+	</form>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

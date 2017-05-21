@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>新闻</title>
+<style>
+	div {
+		border:1px solid red;
+		width:318px;
+		/*增加position是为了让子元素绝对定位，值没有限制，但是一般都使用相对定位，此处不设置偏移 */
+		position:relative;
+	}
+	p {
+		/*绝对定位，以带有position的父辈为目标 */
+		position:absolute;
+		left:0;
+		bottom:20px;
+		border:1px solid blue;
+		background-color:#fff;
+		width:318px;
+		line-height:2em;
+		text-align:center;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<img src="../images/3.jpg"/>
+		<p>上海自来水来自海上</p>
+	</div>
+	
+</body>
+</html>
